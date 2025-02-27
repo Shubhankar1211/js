@@ -18,3 +18,32 @@ const myfunction = function(){
     console.log("hello")
 };
 console.log(typeof myfunction);// it will return function
+
+
+
+//=======================================================================
+
+//stack(primitive) yha to memeory ka copy milta h  , heap(non-primitive) yha pe hame memory location ka refernce milta h cahnge orginal value me hota h
+
+
+// yha sirf hame copy mil rahi thi
+let name = "shubhankarchauhan"
+let anothername = name;
+anothername ="guru";
+console.log(name); // it is currently storing shubhankarchauhan
+console.log(anothername);//it store guru
+
+
+// yha par hame refernce mil raha h 
+
+let userone ={
+    name:"shubhakar chauhan",
+    branch: "ece",
+}
+let usertwo = userone;
+usertwo.name="soumya tomar"
+
+console.log(userone.name);// soumya tomar
+console.log(usertwo.name);// soumya tomar
+
+
