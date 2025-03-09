@@ -40,3 +40,41 @@ console.log(gamer("deadly0g"));
 console.log(gamer("")); // output you are loggedin
 console.log(gamer()); //  undefined you are loggedin
 
+
+
+
+
+function stockadditon(...num1){ // ... here make the output int the array format of the number the array
+    return num1;
+}
+console.log(stockadditon(100,200,300,400,500));
+
+
+
+
+
+
+
+const obj = {
+    name: "backend",
+    class: "frontend",
+}
+
+function handelobject(anyobject){
+    console.log(`main role is ${anyobject.name} and second role is ${anyobject.class}`)
+}
+
+handelobject(obj);
+handelobject({
+    name:"bhsabd",
+    class:"jfnjs",
+});
+
+
+const array = [1,2,3,4];
+function handelarray(anyarray){
+       return anyarray;
+}
+
+console.log(handelarray(array));
+console.log(handelarray([5,6,7,8]));
