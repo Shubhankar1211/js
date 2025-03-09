@@ -36,22 +36,4 @@ console.log(obj.greeting()); // ye eroor ayega ki ye abhi ek function nahi h
 console.log(obj.greetingtwo());
 
 
-/*
-let obj1 = {
-    name : "utkarsh kumar sinha",
-    branch : " ece-1",
-}
-console.log(obj1);
-
-let obj2 = {
-    name : "utkarsh kumar sinha",
-    branch : " ece-1",
-}
-console.log(obj2);
-
-let obj3 = obj + obj1;
-console.log(obj3);
-console.log(typeof obj3); // string
-console.log(typeof obj3); // string
-*/
 
