@@ -67,3 +67,18 @@ if(true){
 
 // imp question 
 
+function addone(num){
+       return (num + 1);
+}
+
+//console.log(addone(5)); ye yah bhi run go jayega agar isee upper declare kardiyea ye jab bhi run ho jayega
+
+
+
+
+const addtwo = function(num){
+      return (num+2);
+}
+
+console.log(addtwo(5)); // ye bhi yah run ho jayega par agar ise expression se phle declare karenge to ye run nhi hoga 
+
