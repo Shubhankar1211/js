@@ -26,3 +26,7 @@ user.name="utkarsh";
 user.welcome();
 console.log(this); // this give empty object hame ode envoremnt me h to this empty ko reffer kar raha h empty object ko samse jyada jo global object h vo window object h 
 
+
+
+//  ++++++++++++++++++++++++++++++ arrow ++++++++++++++++++++++++++++++ //
+
