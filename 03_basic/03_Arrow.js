@@ -30,3 +30,4 @@ console.log(this); // this give empty object hame ode envoremnt me h to this emp
 
 //  ++++++++++++++++++++++++++++++ arrow ++++++++++++++++++++++++++++++ //
 
+console.log("hello world");
