@@ -69,5 +69,12 @@ console.log(code4(5,5));
 
 // we can make arrow fucntion into a implicit function by removing the {};
 //const code5=  (num1,num2) => num1+num2; // ye 
-const code5=  (num1,num2) => (num1+num2); // ye 
+const code5=  (num1,num2) => (num1+num2); // agar parnethiesis likhe to  return keyowrd nahi likhna padega 
 console.log(code5(6,6));
+
+const code6 = (num1,num2) => {user1 : "shubhankar chauhan"} // bina parentheis ke run karnege to ye undefiend show karnega
+console.log(code6());
+
+
+const code7 = (num1,num2) => ({user1 : "shubhankar chauhan"}); // here it will work because we have used perntheises.
+console.log(code7());
