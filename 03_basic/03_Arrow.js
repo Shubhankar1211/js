@@ -30,4 +30,44 @@ console.log(this); // this give empty object hame ode envoremnt me h to this emp
 
 //  ++++++++++++++++++++++++++++++ arrow ++++++++++++++++++++++++++++++ //
 
-console.log("hello world");
+
+function code(){
+  let uname = "shubhankar chauhan"
+  console.log(this.uname); // it shoes  undefiend we can't accesss by this int he function it only run it only work in the objects.
+}
+code();// it shows many functions 
+   
+
+
+
+const code1 = function(){
+  let uname = "shubhankar chauhan"
+  console.log(this.uname); // it shoes  undefiend we can't accesss by this int he function it only run it only work in the objects.
+}
+code1();// it shows many functions 
+
+
+
+// this is the same as upper fucntion but we write this with the help of arrow function
+const code2 =()=>{
+  let uname = "shubhankar chauhan"
+  console.log(this.uname); // it shoes  undefiend we can't accesss by this int he function it only run it only work in the objects.
+}
+
+code();// it shows many functions 
+
+
+
+// simple example of arrow fucntion
+const code4 = (num1 ,num2) => {
+  return num1+ num2;  // agar curly braces use huyii to return keyword likhna hi padega warna undefeind ayega hi ayega 
+}
+
+console.log(code4(5,5));
+
+
+
+// we can make arrow fucntion into a implicit function by removing the {};
+//const code5=  (num1,num2) => num1+num2; // ye 
+const code5=  (num1,num2) => (num1+num2); // ye 
+console.log(code5(6,6));
