@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom learning</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+    </ul>
+</body>
+<script>
+    // here we learn about how to add 
+
+    function addLanguage(languagename){
+        const li = document.createElement('li');
+        li.innerHTML= `${languagename}` // yha pure ke pure tree me traversing hoti h
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage("c++")
+    addLanguage("ptyhon")
+
+    function addLanguage1(languagename){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(languagename))// this is the optimial way beacuse we don't have to travel through whole tree here we created a node and complete it
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage1("golang");
+
+    // here we learn about how to edit
+
+   const secondLang = document.querySelector("li:nth-child(2)") // this is top select li 
+   console.log(secondLang);
+   const  newli = document.createElement('li')
+   //newli.textContent = "Mojo"
+   // Using createTextNode instead of textContent
+   const textNode = document.createTextNode("Mojo");
+   newli.appendChild(textNode);
+   secondLang.replaceWith(newli);
+
+    // it is second method for edit
+    const firstlang=  document.querySelector("li:first-child")
+    firstlang.outerHTML= '<li>TypeScript</li>'
+
+
+
+    
+    //here we learn about remove
+    const lastlang= document.querySelector("li:last-child")
+    lastlang.remove()
+
+
+
+</script>
+</html>
