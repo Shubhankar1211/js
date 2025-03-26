@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom learning</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+<script>
+const div = document.createElement("div");
+console.log(div);
+
+div.className = "main";
+div.id = Math.floor(Math.random() * 10 + 1); // Corrected Math.random()
+
+document.title = "learning"; // Corrected way to set the title
+
+div.style.backgroundColor = "green";
+div.style.padding = "12px";
+div.style.color = "red";
+
+// Correcting the case of the variable `addText`
+const addText = document.createTextNode("creating the div element first time");
+div.appendChild(addText); // Fixed incorrect variable name
+
+document.body.appendChild(div);
+
+
+</script>
+</html>
