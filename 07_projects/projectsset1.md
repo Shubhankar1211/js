@@ -198,7 +198,7 @@ function newGame(){
   userInput.removeAttribute('disabled') // yha ye disabled attribute hta diya  h
   startOver.removeChild(p); // yha hmne jo child add kiye tha usee hat diya h
 
-  playGame = true
+  playGame = true // jise ham dobara game khel apyeee
   })
 } 
 
