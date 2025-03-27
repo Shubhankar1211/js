@@ -78,3 +78,18 @@ form.addEventListener('submit', (e)=>{
 })
 
 ```
+
+## project 3 solution code 
+
+```javascript
+
+const clock = document.querySelector('#clock')
+
+setInterval(function(){ // set interval hame use karte lgatar change karne ke liye 
+  let date = new Date();
+  //console.log(date.toLocaleTimeString()); // it will display in console but we don't want to display in console tha is whu we use
+  clock.innerHTML = date.toLocaleTimeString()
+},1000)
+
+
+```
