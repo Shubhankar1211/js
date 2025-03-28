@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+   // document.getElementById('owl').onclick = function(){
+   //     alert('you clicked on owl');
+   // }
+   // attachEvent() is used for older version of IE(internet explorer)
+   // jquery - on 
+   // type , timestamp , defaultPrevented 
+    // target , toElement , srcElement ,CurrentTarget,
+    // clientX ,clientY ,screenX, screenY
+    // altkey , ctrlley , shiftkey, keycode
+
+
+   // document.getElementById('owl').addEventListener('click', function(e){
+        //alert('own is clicked');
+    //    console.log(e);
+   // },false ) // kuch interview me question aise diye jate hai jo bina false likhe kam nahi karte h to envet listener me false likhna padega or ye flase evnet listener ka third elment h fucntion ke baad  yha hmane isliye anhi likh skyo ki yha false default vlaue h
+    // event propogation ke do context hota h one is envet bubbling and other one is envent capturing market me default false hi use hota h use bolte h event bubbling but khai kahi true bhi sue hot ah use event capturing bolte h   
+    
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside the ul");
+        
+    },false)
+
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log("owl clicked")
+        e.stopPropagation()// isee use karne se envet bubble hoke uppper ke bubble par nahi jayega
+    },false)
+    // bubbling ka sab khel h jaise chote bubble se bade bubble ki or jate h waise hi event propogation hota h
+    // agar hamen false ki jagah true kardiye to use capturing kah te h or capturing bade se chote ki tharaf jata h 
+    
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+    },false)
+  
+
+    // here we have given a task ki jaise hi ham imaage apr clcik kare wiase hi vo jayab ho jayea 
+    document.querySelector('#images').addEventListener('click', function(e){
+           // console.log(e);
+           //console.log(e.target);  
+           //console.log(e.target.parentNode);
+           //let removeIt = e.target.parentNode
+           //removeIt.remove();  // this is one method but it has a flow that when ever we click other thena imaeg parent change to ul and whole ul got deleted
+           //removeIt.parentNode.removeChild(removeIt) htis is method 2
+
+           // now make strict check
+           console.log(e.target.tagName);
+           if(e.target.tagName === 'IMG'){
+               console.log(e.target.id);
+               let removeIt = e.target.parentNode
+               removeIt.remove()
+           }
+        },false)
+
+
+
+</script>
+</html>
