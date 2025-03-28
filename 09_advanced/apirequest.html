@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /// ek assignement h ki objectme ese photo niklani h follower sbhi naklae h or ek card banana h  jais ehi data aajye banda button pe click kare 
+
+    const requestUrl  = "https://api.github.com/users/shubhankar1211"
+    // ye ek method h jiske andar ye sab ready state hoti h iski thorugh app apna data request send kar sakte ho or revieve kar skate ho 
+    const xhr =  new XMLHttpRequest()  //ise banane ke baad hi opensate bna skate h 
+    xhr.open('GET',requestUrl) // asal meyha se request ajti nahi h hame open ko call karna padega 
+    // basically kya hota h jaise hi apen request bheji h tab abki request changehoti h continoulsy isliye hamen console.log kiya h 
+    // lekin ise chalane ke liye hame isse track karna padt ha hamne issee bola hi nahi h ki ise continously track karna h yue abhi 1 state pe hi h jo upper execute ho gyi thi
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState===4){
+            const data = JSON.parse(this.responseText) // ye return jo milta h vo ek response milta h use bola jata h responseText
+            console.log(typeof data)
+            console.log(data.followers) // jab bhi request se data ata h vo most of the time string  aata h par hamne to obejct ko acces kiya tha isliye ye undefiend aa rhaha tha 
+        }
+    } //jaise hi state change hoti h wiase hi ye fucntion har bar work karta h 2,3,4 state aarahi h
+    xhr.send() // ye likhne ke baad ye open hota h 
+</script>
+</html>
