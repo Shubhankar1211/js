@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Learnig async fucntions</h1>
+    <button id = "stop">stop</button>
+</body>
+<script>
+    // ek ye way h diredct function call
+    setTimeout(function(){
+        console.log("shubhankar");// iska matlabh tum muje 2 sec ka time do uske baad jobologe use me execute kar dunga 
+    },2000) // ye ek handler h to hame fucnton name ke jarroat nahi h 
+
+    // ek ye way h jisse hame direct fucntion ka refernce de sakte h 
+    const utkarsh = function(){
+        console.log("utkarsh")
+    }
+    setTimeout(utkarsh,2000)
+    
+    const changeText = function(){
+       document.querySelector('h1').innerHTML = "Learning async fucntions and making porjects"
+    }
+    
+    const changeMe = setTimeout(changeText,2000)
+   
+    document.querySelector('#stop').addEventListener('click',function(){
+         clearTimeout(changeMe)
+         console.log("stopped")
+    })
+</script>
+</html>
