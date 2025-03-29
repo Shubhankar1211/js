@@ -72,7 +72,7 @@ new Promise(function(resolve,reject){
 //  
 const promiseFive = new Promise((resolve, reject) => {
     setTimeout(function(){
-        let error = true 
+        let error = true
         if(!error){
             resolve({name:"soumya", branch : "ece"})
         }
@@ -82,4 +82,46 @@ const promiseFive = new Promise((resolve, reject) => {
     },1000)
 })
 
-promiseFive.then()
+/*
+async function consumepromiseFive() {
+    const response = await promiseFive
+    console.log(response);
+}
+consumepromiseFive() // ye nahi chaleg kya ki upper false h or ham diectly error ko handel nahi kar skate 
+*/
+
+async function consumepromiseFive() {
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error) // is bar gracefull eroor handel hoaa h waran upper wlase eror aa rha tha 
+    }
+}
+consumepromiseFive()
+
+
+// async function getAllUsers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+
+//         const data = await response.json()
+//         console.log(data);
+//     } catch (error) {
+//         console.log("E: ", error);
+//     }
+// }
+
+//getAllUsers()
+
+fetch('https://api.github.com/users/hiteshchoudhary')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
+
+// promise.all
+// yes this is also available, kuch reading aap b kro.
