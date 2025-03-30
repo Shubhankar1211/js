@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+    <script>
+        class React{
+            constructor(){
+                this.library = "React"
+                this.server = "http://localhost:300"
+                document.querySelector('button').addEventListener('click',this.handelClicked.bind(this))
+            }
+
+            handelClicked(){
+                console.log("button clicked");
+                console.log(this.server); // jaise hi ise access kare rahe iska reference kho gya tha 
+            }
+        }
+    </script>
+</body>
+</html>
