@@ -1,11 +1,6 @@
 let myname = "shubhankar      "
 console.log(myname.trim().length) // it will trim down the spaces and return the length
 
-let othername = "utkarsh       "
-console.log(othername.trueLength); // muje ek method  chiye jha par bhi string ke baad ekxtra space  ho wha ke bideafult ek property aajye true length or asrre spce kam karde or length rpint kar de
-
-
-
 let myHeros = ["thor","spiderman"]// here we declare an array
 let heroPower = { // hee we decalre an obejct 
     thor: "hammer",
@@ -30,4 +25,41 @@ Array.prototype.utkarsh =function(){
 }
 
 myHeros.utkarsh() //yha to chal jaeyga kyo ki ye ek array h 
-heroPower.utkarsh() // par obejct par nahi chalega 
+//heroPower.utkarsh() // par obejct par nahi chalega 
+
+
+// inheritance
+// this is old syntax
+const user ={
+    name : "chai"
+}
+
+const teacher = {
+  makevideo : true
+}
+
+const teachingsupport ={
+    isavailable : false
+}
+
+const ta = {
+    fulltime : true,
+    __proto__:teachingsupport
+}
+
+teacher.__proto__ = user
+
+// modern syntax
+// ye hi prototypicaal inheritance h 
+Object.setPrototypeOf(teachingsupport,teacher)
+
+let othername = "utkarsh       "
+//console.log(othername.trueLength); // muje ek method  chiye jha par bhi string ke baad ekxtra space  ho wha ke bideafult ek property aajye true length or asrre spce kam karde or length rpint kar de
+
+String.prototype.trueLength1 = function(){
+    console.log(`${this}`)
+    console.log(`the true length is ${this.trim().length}`)
+}
+
+othername.trueLength1()
+"shubhankar".trueLength1()
