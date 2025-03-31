@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clouser</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+    <script>
+        // // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     console.log("OUTER", secret);
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;  /yha hamne fucntion ka refrence hi pass kar diya as return
+    // }
+
+    // yha hamen main function execute kardiya h to pure function ka scope to chal gya scope gayab hogya h to kaise chalegi lexical scoping
+    // allthough hamne scope uska execution context hta deya h ab yha memeory ka role ajjat h ajo hamne ye my func bnay h isme sirf display nahi nahi jayega balki puri ki puri scope jayega
+    // agar sirf return displayname kiya h to ye mat soch na ki sirf display main fucntion hi jeyga uski puri lexical scoping bhi jati h or memory share hoti h execution context + lexical scoping
+    
+    // const myFunc = makeFunc(); 
+    // myFunc();
+
+    </script>
+    <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+            
+            // agar ye nahi likhenge to hamen direct execute kardiya function nahi diya
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange") // hamne yha fcuntion nahi diya h balki uska refrence diya h ya defination di hislye ye nahi chal rah  hcalneke liye hame defination me toda change akrana padega 
+        document.getElementById('green').onclick = clickHandler("green") // ye sidhha execute hogya h green karne pe green ahi ho rha h
+
+    </script>
+</html>
