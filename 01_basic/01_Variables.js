@@ -14,5 +14,5 @@ console.table([accountEmail,password ,city, accountState]);
 
 
 /* prefer not to use var
-beacuse if issue in block and functional scope
+beacuse it issues in block and functional scope
 */ 
